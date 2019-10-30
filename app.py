@@ -26,8 +26,8 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("clean_data.csv")
 
-X = df[df.columns.difference(['FinalGrade])]
-Y = df['FinalGrade']
+X = df[df.columns.difference(['Final Grade'])]
+Y = df['Final Grade']
 
  
 
@@ -68,7 +68,7 @@ app.layout = html.Div([
 
     html.Div([  
 
-    html.Label('Home to School Travel Time (from 1: less to 4: high)'),
+    html.Label('Home to School Travel Time [1: less to 4: high]'),
 
     dcc.Slider(id='traveltime-slider',
 
@@ -90,9 +90,9 @@ app.layout = html.Div([
 
 html.Br(),
 
-    html.Label('Weekly Study Time Score (from 1: less to 4: high)'),
+html.Label('Weekly Study Time Score [1: less to 4: high]'),
 
-    dcc.Slider(id='studytime-slider',
+dcc.Slider(id='studytime-slider',
 
             min=1, max=4, step=1, value=3,
 
@@ -112,9 +112,9 @@ html.Br(),
 
 html.Br(),
 
-    html.Label('Past Failure Experiences'),
+html.Label('Past Failure Experiences'),
 
-    dcc.Slider(id='failures-slider',
+dcc.Slider(id='failures-slider',
 
             min=0, max=3, step=1, value=2,
 
@@ -135,9 +135,9 @@ html.Br(),
 
 html.Br(),
 
-    html.Label('Quality of Family Relationship (from 1: very bad to 5: excellent)',
+html.Label('Quality of Family Relationship [1: very bad to 5: excellent]',
 
-    dcc.Slider(id='famrel-slider',
+dcc.Slider(id='famrel-slider',
 
             min=1, max=5, step=1, value=2,
 
@@ -158,31 +158,9 @@ html.Br(),
 
 html.Br(),
 
-    html.Label('Free Time After School (from 1: very low to 5: very high)',
+html.Label('Free Time After School [1: very low to 5: very high]',
 
-    dcc.Slider(id='freetime-slider',
-
-            min=1, max=5, step=1, value=2,
-
-               marks={
-                
-        1: {'label': '1'},
-
-        2: {'label': '2'},
-
-        3: {'label': '3'},
-
-        4: {'label': '4'},    
-
-        5: {'label': '5'}                    
-
-    }),
-
- html.Br(),
-
-    html.Label('Going out With Friends Extent (from 1: very low to 5: very high)',
-
-    dcc.Slider(id='goout-slider',
+dcc.Slider(id='freetime-slider',
 
             min=1, max=5, step=1, value=2,
 
@@ -200,11 +178,35 @@ html.Br(),
 
     }),
 
- html.Br(),
 
-    html.Label('Health Status Score (from 1: very bad to 5: very good)',
+html.Br(),
 
-    dcc.Slider(id='health-slider',
+html.Label('Peer Hangout Extent [1: very low to 5: very high]',
+
+dcc.Slider(id='goout-slider',
+
+            min=1, max=5, step=1, value=2,
+
+               marks={
+                
+        1: {'label': '1'},
+
+        2: {'label': '2'},
+
+        3: {'label': '3'},
+
+        4: {'label': '4'},    
+
+        5: {'label': '5'}                    
+
+    }),
+
+
+html.Br(),
+
+html.Label('Health Status Score [1: very bad to 5: very good]',
+
+dcc.Slider(id='health-slider',
 
             min=1, max=5, step=1, value=2,
 
@@ -287,7 +289,7 @@ dcc.Slider(id='SecondPeriodGrade-slider',
 
         color={"gradient":True,"ranges":{"red":[0,5],"yellow":[5,15],"green":[15,20]}},
 
-        label="FinalGrade",
+        label="Final Grade",
 
         max=20,
 
@@ -340,7 +342,7 @@ def update_output_div(traveltime,
    X_case = pd.DataFrame({'traveltime':[traveltime],'studytime':[studytime],
                           'failures':[failures],'famrel':[famrel],'freetime':[freetime],
                           'goout':[goout],'health':[health],
-                          'FirstPeriodGrade':[FirstPeriodGrade],'SecondPeriodGrade':[SecondPeriodGrade],})
+                          'FirstPeriodGrade':[FirstPeriodGrade],'SecondPeriodGrade':[SecondPeriodGrade]})
 
    Y_case = regressor.predict(X_case)
 
