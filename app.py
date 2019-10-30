@@ -135,7 +135,7 @@ dcc.Slider(id='failures-slider',
 
 html.Br(),
 
-html.Label('Quality of Family Relationship [1: very bad to 5: excellent]',
+html.Label('Quality of Family Relationship [1: very bad to 5: excellent]'),
 
 dcc.Slider(id='famrel-slider',
 
@@ -158,7 +158,7 @@ dcc.Slider(id='famrel-slider',
 
 html.Br(),
 
-html.Label('Free Time After School [1: very low to 5: very high]',
+html.Label('Free Time After School [1: very low to 5: very high]'),
 
 dcc.Slider(id='freetime-slider',
 
@@ -181,7 +181,7 @@ dcc.Slider(id='freetime-slider',
 
 html.Br(),
 
-html.Label('Peer Hangout Extent [1: very low to 5: very high]',
+html.Label('Peer Hangout Extent [1: very low to 5: very high]'),
 
 dcc.Slider(id='goout-slider',
 
@@ -204,7 +204,7 @@ dcc.Slider(id='goout-slider',
 
 html.Br(),
 
-html.Label('Health Status Score [1: very bad to 5: very good]',
+html.Label('Health Status Score [1: very bad to 5: very good]'),
 
 dcc.Slider(id='health-slider',
 
@@ -272,10 +272,11 @@ dcc.Slider(id='SecondPeriodGrade-slider',
     }),
 
 
-
 ],className="pretty_container four columns"),
 
  
+
+
 
   html.Div([
 
