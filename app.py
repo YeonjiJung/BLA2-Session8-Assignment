@@ -332,20 +332,20 @@ dcc.Slider(id='secondgrade-slider',
 
      ])
 
-def update_output_div(traveltime,
-                      studytime,
-                      failures,
-                      famrel,
-                      freetime,
-                      goout,
-                      health,
-                      FirstPeriodGrade,
-                      SecondPeriodGrade):
+def update_output_div(travel,
+                      study,
+                      fail,
+                      family,
+                      free,
+                      peer,
+                      hth,
+                      firstgrade,
+                      secondgrade):
 
-   X_case = pd.DataFrame({'traveltime':[traveltime],'studytime':[studytime],
-                          'failures':[failures],'famrel':[famrel],'freetime':[freetime],
-                          'goout':[goout],'health':[health],
-                          'FirstPeriodGrade':[FirstPeriodGrade],'SecondPeriodGrade':[SecondPeriodGrade]})
+   X_case = pd.DataFrame({'traveltime':[travel],'studytime':[study],
+                          'failures':[fail],'famrel':[family],'freetime':[free],
+                          'goout':[peer],'health':[hth],
+                          'FirstPeriodGrade':[firstgrade],'SecondPeriodGrade':[secondgrade]})
 
    Y_case = regressor.predict(X_case)
 
