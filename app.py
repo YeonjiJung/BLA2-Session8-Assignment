@@ -70,7 +70,7 @@ app.layout = html.Div([
 
     html.Label('Home to School Travel Time [1: less to 4: high]'),
 
-    dcc.Slider(id='traveltime-slider',
+    dcc.Slider(id='travel-slider',
 
             min=1, max=4, step=1, value=3,
 
@@ -92,7 +92,7 @@ html.Br(),
 
 html.Label('Weekly Study Time Score [1: less to 4: high]'),
 
-dcc.Slider(id='studytime-slider',
+dcc.Slider(id='study-slider',
 
             min=1, max=4, step=1, value=3,
 
@@ -114,7 +114,7 @@ html.Br(),
 
 html.Label('Past Failure Experiences'),
 
-dcc.Slider(id='failures-slider',
+dcc.Slider(id='fail-slider',
 
             min=0, max=3, step=1, value=2,
 
@@ -137,7 +137,7 @@ html.Br(),
 
 html.Label('Quality of Family Relationship [1: very bad to 5: excellent]'),
 
-dcc.Slider(id='famrel-slider',
+dcc.Slider(id='family-slider',
 
             min=1, max=5, step=1, value=2,
 
@@ -160,7 +160,7 @@ html.Br(),
 
 html.Label('Free Time After School [1: very low to 5: very high]'),
 
-dcc.Slider(id='freetime-slider',
+dcc.Slider(id='free-slider',
 
             min=1, max=5, step=1, value=2,
 
@@ -183,7 +183,7 @@ html.Br(),
 
 html.Label('Peer Hangout Extent [1: very low to 5: very high]'),
 
-dcc.Slider(id='goout-slider',
+dcc.Slider(id='peer-slider',
 
             min=1, max=5, step=1, value=2,
 
@@ -206,7 +206,7 @@ html.Br(),
 
 html.Label('Health Status Score [1: very bad to 5: very good]'),
 
-dcc.Slider(id='health-slider',
+dcc.Slider(id='hth-slider',
 
             min=1, max=5, step=1, value=2,
 
@@ -229,7 +229,7 @@ html.Br(),
 
 html.Label('First Period Grade'),
 
-dcc.Slider(id='FirstPeriodGrade-slider',
+dcc.Slider(id='firstgrade-slider',
 
             min=0, max=20, step=1, value=10,
 
@@ -253,7 +253,7 @@ html.Br(),
 
 html.Label('Second Period Grade'),
 
-dcc.Slider(id='SecondPeriodGrade-slider',
+dcc.Slider(id='secondgrade-slider',
 
             min=0, max=20, step=1, value=10,
 
@@ -284,7 +284,7 @@ dcc.Slider(id='SecondPeriodGrade-slider',
 
     daq.Gauge(
 
-        id='FinalGrade-gauge',
+        id='finalgrade-gauge',
 
         showCurrentValue=True,
 
@@ -310,23 +310,25 @@ dcc.Slider(id='SecondPeriodGrade-slider',
 
 @app.callback(
 
-    Output('FinalGrade-gauge', 'value'),
+    Output('finalgrade-gauge', 'value'),
 
-    [Input('traveltime-slider', 'value'),
+    [Input('travel-slider', 'value'),
 
-     Input('studytime-slider', 'value'),
+     Input('study-slider', 'value'),
 
-     Input('failures-slider', 'value'),
+     Input('fail-slider', 'value'),
 
-     Input('famrel-slider', 'value'),
+     Input('family-slider', 'value'),
 
-     Input('freetime-slider', 'value'),
+     Input('free-slider', 'value'),
+     
+     Input('peer-slider', 'value'),
 
-     Input('health-slider', 'value'),
+     Input('hth-slider', 'value'),
 
-     Input('FirstPeriodGrade-slider', 'value'),
+     Input('firstgrade-slider', 'value'),
 
-     Input('SecondPeriodGrade-slider', 'value')
+     Input('secondgrade-slider', 'value')
 
      ])
 
