@@ -26,8 +26,8 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("clean_data.csv")
 
-X = df[df.columns.difference(['Final Grade'])]
-Y = df['Final Grade']
+X = df[df.columns.difference(['FinalGrade'])]
+Y = df['FinalGrade']
 
  
 
