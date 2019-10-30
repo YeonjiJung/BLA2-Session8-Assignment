@@ -47,9 +47,6 @@ regressor.fit(X_train, Y_train)
 
  
 
- 
-
- 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -71,21 +68,21 @@ app.layout = html.Div([
 
     html.Div([  
 
-    html.Label('Travel Time (Home to School) Score'),
+    html.Label('Home to School Travel Time (from 1: less to 4: high)'),
 
     dcc.Slider(id='traveltime-slider',
 
-            min=0, max=4, step=1, value=3,
+            min=1, max=4, step=1, value=3,
 
                marks={
                 
-        1: {'label': '1 ( <15 min)'},
+        1: {'label': '1'},
 
-        2: {'label': '2 (15 to 30 min)'},
+        2: {'label': '2'},
 
-        3: {'label': '3 (30 min to 1 hour)'},
+        3: {'label': '3'},
 
-        4: {'label': '4 ( > 1 hour)'},                        
+        4: {'label': '4'},                        
 
     }),
 
@@ -93,21 +90,21 @@ app.layout = html.Div([
 
 html.Br(),
 
-    html.Label('Weekly Study Time Score'),
+    html.Label('Weekly Study Time Score (from 1: less to 4: high)'),
 
     dcc.Slider(id='studytime-slider',
 
-            min=0, max=4, step=1, value=3,
+            min=1, max=4, step=1, value=3,
 
                marks={
                 
-        1: {'label': '1 ( <2 hours)'},
+        1: {'label': '1'},
 
-        2: {'label': '2 (2 to 5 hours)'},
+        2: {'label': '2'},
 
-        3: {'label': '3 (5 to 10 hours)'},
+        3: {'label': '3'},
 
-        4: {'label': '4 ( > 10 hours)'},                        
+        4: {'label': '4'},                        
 
     }),
 
@@ -138,7 +135,7 @@ html.Br(),
 
 html.Br(),
 
-    html.Label('Quality of Family Relationship (from 1: very bad to 5: excellent),
+    html.Label('Quality of Family Relationship (from 1: very bad to 5: excellent)',
 
     dcc.Slider(id='famrel-slider',
 
@@ -161,7 +158,7 @@ html.Br(),
 
 html.Br(),
 
-    html.Label('Free Time After School (from 1: very low to 5: very high),
+    html.Label('Free Time After School (from 1: very low to 5: very high)',
 
     dcc.Slider(id='freetime-slider',
 
@@ -183,7 +180,7 @@ html.Br(),
 
  html.Br(),
 
-    html.Label('Going out With Friends Extent (from 1: very low to 5: very high),
+    html.Label('Going out With Friends Extent (from 1: very low to 5: very high)',
 
     dcc.Slider(id='goout-slider',
 
@@ -205,7 +202,7 @@ html.Br(),
 
  html.Br(),
 
-    html.Label('Health Status Score (from 1: very bad to 5: very good),
+    html.Label('Health Status Score (from 1: very bad to 5: very good)',
 
     dcc.Slider(id='health-slider',
 
@@ -290,7 +287,7 @@ dcc.Slider(id='SecondPeriodGrade-slider',
 
         color={"gradient":True,"ranges":{"red":[0,5],"yellow":[5,15],"green":[15,20]}},
 
-        label="Final Grade",
+        label="FinalGrade",
 
         max=20,
 
